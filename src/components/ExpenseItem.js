@@ -1,11 +1,19 @@
-function ExpenseItem() {
+import './ExpenseItem.css';
+import ExpenseDate from './ExpenseDate';
+
+// Se você usar expressoes entre chaves, você pode executar codigo de JS.
+// Os componentes recebem um parametro chamado 'props', que é um objeto com parametros inputados via html.
+
+function ExpenseItem(props) {
   return (
-    <div>
-      <div>Date</div>
-      <div>
-        <h2>Expense</h2>
-        <div>Money</div>
+    <div className='expense-item'>
+      <ExpenseDate date={props.date} />
+      <div className='expense-item__description'>
+        <h2>{props.expense}</h2>
+        <div className='expense-item__price'>{props.value}</div>
       </div>
     </div>
   )
 }
+
+export default ExpenseItem;
