@@ -10,7 +10,7 @@ function ExpenseItem(props) {
       <ExpenseDate date={props.date} />
       <div className='expense-item__description'>
         <h2>{props.expense}</h2>
-        <div className='expense-item__price'>{props.value}</div>
+        <div className='expense-item__price'>R${props.value}</div>
       </div>
     </div>
   )
