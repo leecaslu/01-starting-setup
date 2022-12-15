@@ -9,14 +9,12 @@ const App = () => {
 
   // handler do input de expenses
   const inputHandler = (input) => {
-    console.log('segue input', input);
     if (input.title && input.date && input.amount) {
       input.id = (expenses).length;
       setExpenses(state => [...state, input]);
-      console.log(input);
     }
   }
-  // colocando so componentes na arvore e passando dados de um comp para outro
+  // colocando os componentes na arvore e passando dados de um comp para outro
   return (
     <div>
       <NewExpense inputHandler={inputHandler} />
