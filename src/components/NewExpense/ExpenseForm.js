@@ -6,6 +6,7 @@ import './ExpenseForm.css';
 export default function ExpenseForm(props) {
   // Definindo o state
   const [input, setInput] = useState({});
+  const [visible, setVisible] = useState(false);
 
   // Definindo as funcoes handlers para o componente
   const submitHandler = (e) => {
@@ -16,6 +17,12 @@ export default function ExpenseForm(props) {
     setInput({}); // resetando o form
   }
 
+  const clickHandler = (e) =>{
+    e.preventDefault();
+    setVisible(visible => !visible);
+    setInput({});
+  }
+
   const titleChangeHandler = (e) => {
     const name = e.target.name;
     const value = e.target.value;
@@ -23,7 +30,11 @@ export default function ExpenseForm(props) {
   };
 
   // Criando o componente
-  return (
+  return ( !visible
+    ? <div className='new-expense__control'>
+    <button type='button' onClick={clickHandler}>Add new Expense</button>
+    </div>
+    :
     <form onSubmit={submitHandler}>
       <div className='new-expense__controls'>
         <div className='new-expense__control'>
@@ -54,6 +65,7 @@ export default function ExpenseForm(props) {
         </div>
       </div>
       <div className='new-expense__actions'>
+        <button type='button' onClick={clickHandler}>Cancel</button>
         <button type='submit'>Add Expense</button>
       </div>
     </form>

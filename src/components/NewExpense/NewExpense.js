@@ -1,10 +1,11 @@
 import './NewExpense.css';
 import ExpenseForm from './ExpenseForm';
+import Card from '../UI/Card';
 
 export default function NewExpense(props) {
   return (
-    <div className='new-expense'>
+    <Card className='new-expense'>
       <ExpenseForm inputHandler={props.inputHandler} />
-    </div>
+    </Card>
   )
 }

@@ -1,9 +1,9 @@
 .card__inactive {
   border-radius: 12px;
-  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 1px 8px #4682B4;
 }
 
 .card__active {
-  border-radius: 10px;
-  box-shadow: 0 3px 9px rgba(248, 246, 246, 0.168);
+  border-radius: 14px;
+  box-shadow: 0 3px 9px #0f2537;
 }
